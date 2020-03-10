@@ -5,9 +5,8 @@
 # Integer checking function
 def intcheck(question, low, high):
     valid = False
+    error = "please enter an integer between {} and {}".format(low, high)
     while not valid:
-        error = "whoops! please enter an integer between {} and {}".format(low, high)
-
         try:
             response = int(input("Enter an integer between {} and {}: ".format(low, high)))
 
@@ -21,5 +20,9 @@ def intcheck(question, low, high):
             print(error)
 
 # main routine goes here
+keep_going =""
+while keep_going == "":
+    how_much = intcheck("how much money do you want to play with ", 1, 15)
+    print("You have chosen to play with ${}".format(how_much))
 
-how_much = intcheck("how mu money do you want to play with ", 1, 15)
+    keep_going = input("Again? ")
